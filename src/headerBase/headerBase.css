@@ -1,0 +1,28 @@
+.headerBase {
+    position: absolute;
+    display: flex;
+    margin-top: -90px;
+    z-index: 5;
+    max-width: 100%;
+}
+.left-shape {
+    height: 70px;
+    width: 50vw;
+    background-color: #fb5e4e;
+    transform: skew(-30deg);
+    margin-top: 20px;
+    margin-left: 20px;
+}
+.right-shape {
+    border-bottom: 90px solid #f34289;
+    border-left: 48px solid transparent;
+    border-right: 48px solid transparent;
+    height: 0;
+    width: 52vw;
+    margin-left: -50px;
+    z-index: 6;
+    color:white;
+    font-size: 1.2rem;
+    text-align: center;
+}
+

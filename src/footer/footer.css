@@ -1,0 +1,9 @@
+.footer {
+    background-color: rgb(17, 27, 82);
+    color:white;
+    margin-top: 50vh;
+}
+copyright {
+    display: flex;
+    justify-content: center;
+}
