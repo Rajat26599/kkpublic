@@ -69,8 +69,6 @@ const Testimonial = () => {
                                 flexDirection:'column', 
                                 justifyContent:'center', 
                                 alignItems:'center',
-                                marginLeft:300,
-                                marginRight:300
                             }}>
                             <div>
                                 <img className="pic" style={{borderRadius:"50%"}} src={`/assets/pic${testInd}.jpg`} alt="Logo" />    

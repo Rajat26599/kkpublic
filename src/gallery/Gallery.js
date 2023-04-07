@@ -49,8 +49,6 @@ const Gallery = () => {
                 <span onClick={decrement}><i className="fa fa-4x fa-angle-left" style={{color:'#bbb'}}></i></span>
                 <iframe 
                     className="video" 
-                    width="1000" 
-                    height="500" 
                     src={videos[testInd].url} 
                     title="YouTube video player" 
                     frameborder="0" 

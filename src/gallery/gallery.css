@@ -6,6 +6,8 @@
 }
 .video {
     padding: 0px 50px;
+    width: 84vw;
+    height: 43vw;
 }
 .fa-angle-left, .fa-angle-right {
     position: relative;
@@ -14,4 +16,14 @@
 .fa-angle-left:hover, .fa-angle-right:hover {
     scale: 1.1;
     color: #888 !important;
+}
+
+
+/* MOBILE STYLING */
+@media screen and (max-width: 600px) {
+    .video {
+        width: 76vw;
+        height: 76vw;
+        padding: 10px;
+    }
 }

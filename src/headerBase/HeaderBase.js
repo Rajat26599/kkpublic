@@ -5,7 +5,7 @@ const HeaderBase = () => {
         <div className='headerBase'>
             <div className='left-shape'></div>
             <div className='right-shape'>                    
-                <p className='address'>
+                <p className='highlight'>
                     ! ADMISSION OPEN
                 </p>
             </div>
