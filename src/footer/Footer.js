@@ -13,7 +13,7 @@ const Footer = () => {
                     </p>
                 </div>
 
-                <copyright>&copy; All right reserved || {(new Date()).getFullYear()}</copyright>
+                <p style={{marginBottom:0}}>&copy; All right reserved || {(new Date()).getFullYear()}</p>
             </div>
         </div>
     )

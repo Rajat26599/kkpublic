@@ -1,7 +1,7 @@
 .header {
     /* background-image: url('../../assets/playwayKids.jpg'); */
     background-image: url('../../assets/hexGraphic2.png');
-    height: 600px;
+    height: 100vh;
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;

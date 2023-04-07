@@ -25,4 +25,17 @@
     font-size: 1.2rem;
     text-align: center;
 }
-
+.address {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 18px;
+    letter-spacing: 0.2rem;
+    animation: color-change 2s infinite;
+}
+@keyframes color-change {
+    0% { color: red; scale: 0.9; }
+    25% { color: rgb(255, 255, 255); }
+    50% { color: rgb(9, 255, 0); }
+    75% { color: rgb(255, 251, 0); scale: 1.1; }
+    100% { color: rgb(0, 255, 255); }
+  }

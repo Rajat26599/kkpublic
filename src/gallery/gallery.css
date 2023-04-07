@@ -1,0 +1,17 @@
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.video {
+    padding: 0px 50px;
+}
+.fa-angle-left, .fa-angle-right {
+    position: relative;
+    color: #aaa !important;
+}
+.fa-angle-left:hover, .fa-angle-right:hover {
+    scale: 1.1;
+    color: #888 !important;
+}
