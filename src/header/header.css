@@ -25,10 +25,8 @@ header {
     margin-top: 50px;
 }
 
-
 .slider-thumb::before {
     position: absolute;
-    /* top:-300px; */
     left:-50px;
     content: "";
     width: 600px;
@@ -60,3 +58,24 @@ header {
     }
 }
 
+
+/* MOBILE STYLING */
+@media screen and (max-width: 600px) {
+    .header {
+        background-position: top;
+        background-size: 130vw;
+    }
+    header {
+        top: 270px;
+        font-size: 4rem;
+    }
+    .slider-thumb::before {
+        width: 350px;
+        height: 350px;
+        top: 350px;
+        left: -20px;
+    }
+    .exploreBtn {
+        display: none !important;
+    }
+}

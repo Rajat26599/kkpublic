@@ -2,4 +2,32 @@
     background-color: rgb(17, 27, 82);
     color:white;
     margin-top: 20vh;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.footer .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.map iframe {
+    width: 50vw;
+    height: 60vh;
+}
+
+/* MOBILE STYLING */
+@media screen and (max-width: 600px) {
+    .footer .container {
+        flex-direction: column;
+    }
+    .map iframe {
+        width: 100%;
+    }
+    .footerText {
+        text-align: center;
+    }
+    .footer {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
 }
