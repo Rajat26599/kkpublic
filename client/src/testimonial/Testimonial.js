@@ -1,27 +1,38 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './testimonial.css';
 // import pic0 from '../../assets/pic1.jpg';
 
 const Testimonial = () => {
-
     const [ testInd, setTestInd ] = useState(0);
+    const [ testimonials, setTestimonials ] = useState([])
 
-    const testimonials = [
-        {
-            id: 0,
-            text: "I'm indeed getting an error, When I include both the libraries my combined JS file starts with jQuery and slick.js comes right after that.. I've also tried adding the library/libraries in the body of the desired page, but that gives the same error.",
-            name: "Shalini Dubey",
-            designation: "(Parent)",
-            imgPath: '',
-        },
-        {
-            id: 1,
-            text: "I'm indeed getting an error, I include both the libraries my combined JS file starts with jQuery and slick.js comes right after that.. I've also tried adding the library/libraries in the body of the desired page, but that gives the same error.",
-            name: "Ankita Sharma",
-            designation: "(Parent)",
-            imgPath: '',
-        }
-    ]
+    const getTestimonials = async () => {
+        await fetch(process.env.REACT_APP_SERVER_URL + '/gallery')
+            .then(res => res.json())
+            .then(data => setTestimonials(data.data.testimonials))
+            .catch(err => console.log(err))
+    }
+
+    useEffect(() => {
+        getTestimonials()
+    }, [])
+
+    // const testimonials = [
+    //     {
+    //         id: 0,
+    //         text: "I'm indeed getting an error, When I include both the libraries my combined JS file starts with jQuery and slick.js comes right after that.. I've also tried adding the library/libraries in the body of the desired page, but that gives the same error.",
+    //         name: "Shalini Dubey",
+    //         designation: "(Parent)",
+    //         imgPath: '',
+    //     },
+    //     {
+    //         id: 1,
+    //         text: "I'm indeed getting an error, I include both the libraries my combined JS file starts with jQuery and slick.js comes right after that.. I've also tried adding the library/libraries in the body of the desired page, but that gives the same error.",
+    //         name: "Ankita Sharma",
+    //         designation: "(Parent)",
+    //         imgPath: '',
+    //     }
+    // ]
 
     const moveRight = (className) => {
         document.getElementsByClassName(className)[0].classList.add("moveRight");
@@ -59,7 +70,7 @@ const Testimonial = () => {
             <div className="testimonial">
                 <div className='container'>
                     <p className='testimonialText'>
-                        "{testimonials[testInd].text}"
+                        "{testimonials && testimonials[testInd]?.text}"
                     </p>
                     <div style={{display:'flex', flexDirection:'row', alignItems:'center'}}>
                         <span onClick={decrement}><i className="fa fa-4x fa-angle-left" style={{color:'#bbb'}}></i></span>
@@ -73,8 +84,8 @@ const Testimonial = () => {
                             <div>
                                 <img className="pic" style={{borderRadius:"50%"}} src={`/assets/pic${testInd}.jpg`} alt="Logo" />    
                             </div><br />
-                            <h5>{testimonials[testInd].name}</h5>
-                            <h6>{testimonials[testInd].designation}</h6>
+                            <h5>{testimonials && testimonials[testInd]?.name}</h5>
+                            <h6>{testimonials && testimonials[testInd]?.designation}</h6>
                         </div>
                         <span onClick={increment}><i className="fa fa-4x fa-angle-right" style={{color:'#bbb'}}></i></span>
                     </div>
