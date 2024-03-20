@@ -7,7 +7,7 @@ const Testimonial = () => {
     const [ testimonials, setTestimonials ] = useState([])
 
     const getTestimonials = async () => {
-        await fetch(process.env.REACT_APP_SERVER_URL + '/gallery')
+        await fetch(process.env.REACT_APP_SERVER_URL + '/testimonials')
             .then(res => res.json())
             .then(data => setTestimonials(data.data.testimonials))
             .catch(err => console.log(err))

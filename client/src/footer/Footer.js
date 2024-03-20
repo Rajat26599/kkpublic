@@ -1,10 +1,16 @@
+import { Link } from 'react-router-dom';
 import './footer.css';
+import { Button } from '../common/button/Button';
 
 const Footer = () => {
     return (
         <div className='footer'>
             <div className='container'>
                 <div className='footerText'>
+                    <Link to='/login'>
+                        <Button>Admin Login</Button>
+                    </Link>
+                    <hr />
                     <h2>Contact Us</h2>
                     <p>
                         K K Public School <br />

@@ -18,7 +18,8 @@ router.get('/', (req, res) => {
                     url: "https://www.youtube.com/embed/-arh-e3fLnY"
                 }
             ]
-        }
+        },
+        status: 'success'
     })
 })
 
