@@ -1,0 +1,48 @@
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    margin-top: 20vh;
+    width: 60vw;
+}
+
+.hero{
+    height: 500px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    padding:0 140px;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 100%);
+  }
+  canvas {
+    width: 100%;
+    height:100%;
+    inset: 0;
+    position: absolute;
+  }
+  .hero-wrapper{
+    position: relative;
+  }
+  .hero .title{
+    position: relative;
+    z-index: 2;
+    font-size: 84px;
+    width: 650px;
+    color: #555;
+    opacity: .9;
+    margin-top: 160px;
+    mix-blend-mode: color-burn;
+    font-weight: 900;
+  }
+  .hero-behind{
+    position: absolute !important;
+    clip-path: none;
+    top: 0;
+  }
+  .hero-behind .title{
+    color: #111;
+    opacity: 1;
+    z-index: -1;
+  }

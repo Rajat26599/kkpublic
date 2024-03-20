@@ -15,7 +15,7 @@ const Footer = () => {
                         <i className="fa fa-envelope" style={{color:'#bbb'}}></i>&nbsp;<a href="mailto:kkpublic.skb@gmail.com">kkpublic.skb@gmail.com</a>
                     </p>
                     <br />
-                    <p style={{marginBottom:0}}>&copy; All right reserved || {(new Date()).getFullYear()}</p>
+                    <p style={{marginBottom:0}}>&copy; All rights reserved || {(new Date()).getFullYear()}</p>
                 </div>
                 <div className='map'>
                     <iframe 

@@ -6,6 +6,7 @@ import Testimonial from '../testimonial/Testimonial';
 import Gallery from '../gallery/Gallery';
 import Footer from '../footer/Footer';
 // import Map from '../utils/Map';
+import Card from '../card/Card';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <HeaderBase />
             <Testimonial />
             <Gallery />
+            <Card />
             <Footer />
             {/* <Map /> */}
         </div>
