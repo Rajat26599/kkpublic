@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import globalStyles from "../../data/constants/globalStyles";
+import { Heading6 } from "../../components/heading/styles";
 
 export const NavbarWrapper = styled.div`
     position: fixed;
@@ -25,9 +26,8 @@ export const Categories = styled.ul`
 
 export const Category = styled.li`
     display: inline-block;
-    font-weight: bold;
-    padding: 0.2rem 1rem;
     margin: 0 1rem;
+    padding: 0.4rem 1rem;
     cursor: pointer;
     border-radius: 1rem;
     color: ${globalStyles.colors.navyBlue};
@@ -35,5 +35,9 @@ export const Category = styled.li`
     &:hover {
         background-color: ${globalStyles.colors.peach};
         color: ${globalStyles.colors.white};
+    }
+
+    & ${Heading6} {
+        margin: 0;
     }
 `

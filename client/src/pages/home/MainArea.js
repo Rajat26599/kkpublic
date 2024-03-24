@@ -1,5 +1,5 @@
-const { default: KeyFeatures } = require("./KeyFeatures")
-const { MainAreaWrapper } = require("./styles")
+import KeyFeatures from "./KeyFeatures"
+import { MainAreaWrapper } from "./styles"
 
 const MainArea = () => {
     return (
