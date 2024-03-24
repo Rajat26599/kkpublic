@@ -63,9 +63,9 @@ const Circles = () => {
             animationPath: 1,
         },
         {
-            radius: '80px',
+            radius: '40px',
             bgcolor: peach,
-            position: {x: '20%', y: '1800px'},
+            position: {x: '95%', y: '1800px'},
             animationPath: 4,
         }
     ]
