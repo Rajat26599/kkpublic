@@ -3,26 +3,34 @@ import FeatureCard from "../../components/featureCard/FeatureCard"
 import Heading from "../../components/heading/Heading"
 import P from "../../components/p/P"
 import globalStyles from "../../data/constants/globalStyles"
+import HappyBoy from '../../assets/vectors/happy-boy.png'
+import Dices from '../../assets/vectors/dices.png'
+import Certificate from '../../assets/vectors/certificate.png'
+import Lock from '../../assets/vectors/lock.png'
 
-const { KeyFeaturesWrapper, KeyFeaturesContent, PeachText, KeyFeatureCards } = require("./styles")
+import { KeyFeaturesWrapper, KeyFeaturesContent, PeachText, KeyFeatureCards } from "./styles"
 
 const KeyFeatures = () => {
     const data = [
         {
             title: 'Home-like Environment',
-            text: 'We create home-like environment for children.'
+            text: 'We create home-like environment for children.',
+            imgUrl: HappyBoy,
         },
         {
             title: 'Safety and Security',
-            text: 'We create home-like environment for children.'
+            text: 'We create home-like environment for children.',
+            imgUrl: Lock,
         },
         {
             title: 'Quality Educators',
-            text: 'We create home-like environment for children.'
+            text: 'We create home-like environment for children.',
+            imgUrl: Certificate,
         },
         {
             title: 'Play to Learn',
-            text: 'We create home-like environment for children.'
+            text: 'We create home-like environment for children.',
+            imgUrl: Dices,
         }
     ]
     return (
@@ -37,7 +45,11 @@ const KeyFeatures = () => {
             <KeyFeatureCards>
                 {
                     data.map((item, index) => (
-                        <FeatureCard key={index} bgcolor={ index === 0 ? globalStyles.colors.peach : globalStyles.colors.white }>
+                        <FeatureCard 
+                            key={index} 
+                            bgcolor={ index === 0 ? globalStyles.colors.peach : globalStyles.colors.white }
+                            imgUrl={item.imgUrl}
+                            >
                             <Heading level='4' color={index === 0 ? globalStyles.colors.white : globalStyles.colors.navyBlue}>
                                 <strong>{item.title}</strong>
                             </Heading>

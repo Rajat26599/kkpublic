@@ -7,5 +7,10 @@ export const MyButton = styled.button`
     padding: 0.2rem 1rem;
     border-radius: 20px;
     min-width: 50px;
-    color: ${props => props.bgcolor === globalStyles.colors.peach ? globalStyles.colors.white : globalStyles.colors.navyBlue}
+    color: ${props => props.bgcolor === globalStyles.colors.peach ? globalStyles.colors.white : globalStyles.colors.navyBlue};
+
+    &:hover {
+        background-color: ${globalStyles.colors.white};
+        color: ${props => props.bgcolor};
+    }
 `

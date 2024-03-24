@@ -5,7 +5,7 @@ const globalStyles = {
         white: 'white',
     },
     spacing: {
-        desktopSideSpacing: '200px',
+        desktopSideSpacing: '100px',
     }
 }
 

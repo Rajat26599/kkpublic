@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "MPlusRounded1c";
+    src: url('./assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Regular.ttf');
+}
+@font-face {
+    font-family: "MPlusRounded1c";
+    src: url('./assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-Bold.ttf');
+    font-weight: 'bold';
+}
+@font-face {
+    font-family: "MPlusRounded1c";
+    src: url('./assets/fonts/M_PLUS_Rounded_1c/MPLUSRounded1c-ExtraBold.ttf');
+    font-weight: 'bolder';
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url('./assets/fonts/Roboto/Roboto-Regular.ttf');
+}
