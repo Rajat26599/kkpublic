@@ -10,13 +10,28 @@ export const FooterWrapper = styled.div`
 `
 export const MyFooter = styled.div`
     display: flex;
+
+    @media screen and (max-width: ${globalStyles.devices.small}) {
+        flex-direction: column;
+    }
 `
 export const FooterImg = styled.img`
     width: 50%;
+
+    @media screen and (max-width: ${globalStyles.devices.small}) {
+        width: 100%;
+    }
 `
 export const FooterContent = styled.div`
     width: 50%;
-    padding: 5rem;
+    padding: 5rem ${globalStyles.spacing.desktopSideSpacing};
+
+    @media screen and (max-width: ${globalStyles.devices.small}) {
+        width: 100%;
+        padding-left: ${globalStyles.spacing.mobileSideSpacing};
+        padding-right: ${globalStyles.spacing.mobileSideSpacing};
+        text-align: center;
+    }
 `
 export const CopyrightWrapper = styled.div`
     background-color: ${globalStyles.colors.navyBlue};
