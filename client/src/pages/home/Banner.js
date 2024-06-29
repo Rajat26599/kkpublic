@@ -17,7 +17,9 @@ const Banner = () => {
             <RightGraphic></RightGraphic>
             <BannerMain>
                 <BannerContent>
-                    <Heading level='1' color={globalStyles.colors.navyBlue}>We Create Magic For Kids</Heading>
+                    <P color={globalStyles.colors.navyBlue}>Here in</P>
+                    <Heading level='1' color={globalStyles.colors.peach}>K. K. Public School</Heading>
+                    <Heading level='4' color={globalStyles.colors.navyBlue}>We Create Magic For Kids</Heading>
                     <P color={globalStyles.colors.navyBlue}>Dream is often a child's first introduction to school. The learning library surplus of online resources. Hello new learners transition into the scholaristic world of ABCs and 123s.</P>
                     <Button>Book a visit</Button>
                 </BannerContent>

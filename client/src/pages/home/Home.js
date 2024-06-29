@@ -4,6 +4,7 @@ import Navbar from "../../layouts/navbar/Navbar"
 
 import { HomeWrapper } from "./styles"
 import Circles from "./Circles"
+import Footer from "../../layouts/footer/Footer"
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <Navbar />
             <Banner />
             <MainArea />
+            <Footer />
         </HomeWrapper>
     )
 }

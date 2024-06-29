@@ -10,8 +10,9 @@ export const NavbarWrapper = styled.div`
     z-index: 999;
     background-color: ${props => props.bgcolor};
     width: 100%;
-    height: 100px;
+    height: 80px;
     transition: background-color 0.5s ease-in-out;
+    box-shadow: ${props => props.bgcolor === 'transparent' ? 'unset' : '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'};
 `
 
 export const BrandLogo = styled.img`

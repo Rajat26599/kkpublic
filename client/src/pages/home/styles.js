@@ -68,7 +68,7 @@ export const GamesSubCard = styled.div`
 // MAIN AREA
 
 export const MainAreaWrapper = styled.div`
-    position: absolute;
+    position: relative;
     z-index: -999;
 `
 
