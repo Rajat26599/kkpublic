@@ -13,6 +13,11 @@ export const NavbarWrapper = styled.div`
     height: 80px;
     transition: background-color 0.5s ease-in-out;
     box-shadow: ${props => props.bgcolor === 'transparent' ? 'unset' : '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)'};
+
+    @media screen and (max-width: ${globalStyles.devices.small}) {
+        padding: 0 ${globalStyles.spacing.mobileSideSpacing};
+        justify-content: space-between;
+    }
 `
 
 export const BrandLogo = styled.img`
@@ -40,5 +45,24 @@ export const Category = styled.li`
 
     & ${Heading6} {
         margin: 0;
+    }
+`
+
+export const Hamburger = styled.div`
+    padding: 3px;
+
+    div {
+        background: ${globalStyles.colors.navyBlue};
+        height: 3px;
+        margin: 5px 5px 5px auto;
+    }
+    div:nth-of-type(1) {
+        width: 20px;
+    }
+    div:nth-of-type(2) {
+        width: 25px;
+    }
+    div:nth-of-type(3) {
+        width: 16px;
     }
 `
