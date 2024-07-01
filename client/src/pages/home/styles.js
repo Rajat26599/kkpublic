@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import { styled, css } from 'styled-components'
 import globalStyles from '../../data/constants/globalStyles'
 import { SubCardImg } from '../../components/subCard/styles'
 import { FeatureCardWrapper } from '../../components/featureCard/styles'
@@ -50,11 +50,8 @@ export const BannerMain = styled.div`
 export const BannerContent = styled.div`
     animation: ${moveUp} 1s ease-in-out, ${fadeIn} 1s ease-in-out;
 
-    h1:nth-of-type(1) {
-        background: white;
-    }
-
     @media screen and (max-width: ${globalStyles.devices.small}) {
+        width: 100vw;
         background: white;
         padding: 1rem;
         z-index: -999;
@@ -81,33 +78,35 @@ export const HeroImg = styled.img`
         height: 250px;
     }
 `
-export const ProTeacherSubCard = styled.div`
+
+const commonSubCardStyling = css`
     position: relative;
+
+    @media screen and (max-width: ${globalStyles.devices.small}) {
+        position: static;
+        display: inline-block;
+        transform: scale(0.8);
+        margin-top: 2rem;
+    }
+`
+
+export const ProTeacherSubCard = styled.div`
+    ${commonSubCardStyling}
     top: -40%;
     left: 40%;
     animation: ${fadeIn} 1s ease-in-out;
 
     @media screen and (max-width: ${globalStyles.devices.small}) {
-        position: static;
-        display: inline-block;
-        margin-top: 2rem;
         margin-right: 0.4rem;
-        transform: scale(0.7);
     }
 `
 export const GamesSubCard = styled.div`
-    position: relative;
+    ${commonSubCardStyling}
     top: -125%;
     left: 80%;
 
     & ${SubCardImg} {
         animation: ${spin(3)} 1s ease;
-    }
-
-    @media screen and (max-width: ${globalStyles.devices.small}) {
-        position: static;
-        display: inline-block;
-        transform: scale(0.7);
     }
 `
 
