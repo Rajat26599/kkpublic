@@ -6,13 +6,24 @@ import { spin } from '../../util/animations/spin'
 import { moveUp } from '../../util/animations/moveUp'
 import { fadeIn } from '../../util/animations/fadeIn'
 
-export const HomeWrapper = styled.div``
+export const HomeWrapper = styled.div`
+    position: relative;
+    overflow: hidden;
+`
 
 // BANNER
 
 export const BannerWrapper = styled.div`
     padding: 0 ${globalStyles.spacing.desktopSideSpacing};
     height: 90vh;
+
+    @media screen and (max-width: ${globalStyles.devices.small}) {
+        padding-left: ${globalStyles.spacing.mobileSideSpacing};
+        padding-right: ${globalStyles.spacing.mobileSideSpacing};
+        padding-top: 2rem;
+        margin-bottom: 15rem;
+        text-align: center;
+    }
 `
 export const RightGraphic = styled.div`
     position: absolute;
@@ -31,15 +42,33 @@ export const BannerMain = styled.div`
     width: 100%;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: ${globalStyles.devices.small}) {
+        flex-direction: column-reverse;
+    }
 `
 export const BannerContent = styled.div`
     animation: ${moveUp} 1s ease-in-out, ${fadeIn} 1s ease-in-out;
+
+    h1:nth-of-type(1) {
+        background: white;
+    }
+
+    @media screen and (max-width: ${globalStyles.devices.small}) {
+        background: white;
+        padding: 1rem;
+        z-index: -999;
+    }
 `
 
 export const HeroImgWrapper = styled.div`
     height: 100%;
     display: grid;
     align-items: end;
+
+    @media screen and (max-width: ${globalStyles.devices.small}) {
+        margin-top: 4rem;
+    }
 `
 export const HeroImg = styled.img`
     position: relative;
@@ -47,12 +76,24 @@ export const HeroImg = styled.img`
     width: auto;
     animation: ${moveUp} 1s ease-in-out, ${fadeIn} 1s ease-in-out;
     z-index: -9999;
+
+    @media screen and (max-width: ${globalStyles.devices.small}) {
+        height: 250px;
+    }
 `
 export const ProTeacherSubCard = styled.div`
     position: relative;
     top: -40%;
     left: 40%;
     animation: ${fadeIn} 1s ease-in-out;
+
+    @media screen and (max-width: ${globalStyles.devices.small}) {
+        position: static;
+        display: inline-block;
+        margin-top: 2rem;
+        margin-right: 0.4rem;
+        transform: scale(0.7);
+    }
 `
 export const GamesSubCard = styled.div`
     position: relative;
@@ -61,6 +102,12 @@ export const GamesSubCard = styled.div`
 
     & ${SubCardImg} {
         animation: ${spin(3)} 1s ease;
+    }
+
+    @media screen and (max-width: ${globalStyles.devices.small}) {
+        position: static;
+        display: inline-block;
+        transform: scale(0.7);
     }
 `
 
@@ -80,10 +127,22 @@ export const KeyFeaturesWrapper = styled.div`
     justify-content: space-between;
     width: 100vw;
     padding: 100px ${globalStyles.spacing.desktopSideSpacing};
+
+    @media screen and (max-width: ${globalStyles.devices.small}) {
+        flex-direction: column;
+        padding-left: ${globalStyles.spacing.mobileSideSpacing};
+        padding-right: ${globalStyles.spacing.mobileSideSpacing};
+        justify-content: center;
+        text-align: center;
+    }
 `
 export const KeyFeaturesContent = styled.div`
     width: 50%;
     align-self: center;
+
+    @media screen and (max-width: ${globalStyles.devices.small}) {
+        width: 100%;
+    }
 `
 
 export const PeachText = styled.span`
@@ -121,6 +180,24 @@ export const KeyFeatureCards = styled.div`
     & ${FeatureCardWrapper}:nth-child(4) {
         animation: ${fadeIn} 1s 1.75s ease-in-out;
     }
+
+    @media screen and (max-width: ${globalStyles.devices.small}) {
+        width: 100%;
+        justify-content: center;
+
+        div {
+            margin-bottom: 2rem;
+            margin-left: 0;
+        }
+        div:first-child {
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        div:last-child {
+            margin-top: 0;
+        }
+    }
 `
 
 // Circles
@@ -131,4 +208,10 @@ export const CirclesWrapper = styled.div`
     width: 100vw;
     background: transparent;
     z-index: -99;
+
+    @media screen and (max-width: ${globalStyles.devices.small}) {
+        div:nth-of-type(1) {
+            left: 60%;
+        }
+    }
 `
