@@ -7,7 +7,7 @@ const globalStyles = {
     },
     spacing: {
         desktopSideSpacing: '100px',
-        mobileSideSpacing: '25px',
+        mobileSideSpacing: '15px',
     },
     devices: {
         small: '480px',

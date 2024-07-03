@@ -22,7 +22,7 @@ const Navbar = () => {
             setScreenWidth(window.innerWidth)
         }
         window.addEventListener('scroll', handleScroll)
-        window.addEventListener('resize', handleScreenWidth)
+        window.addEventListener('resize', handleScreenWidth)   
         return () => {
             window.removeEventListener('scroll', handleScroll)
             window.removeEventListener('resize', handleScreenWidth)
@@ -35,7 +35,7 @@ const Navbar = () => {
         <NavbarWrapper bgcolor={scrollYPosition >= window.innerHeight-100 ? globalStyles.colors.white : 'transparent'}>
             <BrandLogo src={Logo}></BrandLogo>
             {
-                screenWidth > globalStyles.devices.small ?
+                screenWidth > parseInt(globalStyles.devices.small.substring(0, globalStyles.devices.small.length-2)) ?
                     <Categories>
                         {
                             categories.map((item, index) => (
@@ -46,7 +46,7 @@ const Navbar = () => {
                         }
                     </Categories>
                 :
-                    <Hamburger>
+                    <Hamburger onClick={() => setShowSideNav(true)}>
                         <div></div>
                         <div></div>
                         <div></div>
