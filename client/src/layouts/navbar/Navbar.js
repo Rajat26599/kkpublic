@@ -35,7 +35,7 @@ const Navbar = () => {
         <NavbarWrapper bgcolor={scrollYPosition >= window.innerHeight-100 ? globalStyles.colors.white : 'transparent'}>
             <BrandLogo src={Logo}></BrandLogo>
             {
-                screenWidth > parseInt(globalStyles.devices.small.substring(0, globalStyles.devices.small.length-2)) ?
+                screenWidth > parseInt(globalStyles.devices.laptop.substring(0, globalStyles.devices.laptop.length-2)) ?
                     <Categories>
                         {
                             categories.map((item, index) => (

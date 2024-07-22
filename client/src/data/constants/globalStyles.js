@@ -6,11 +6,16 @@ const globalStyles = {
         white: 'white',
     },
     spacing: {
-        desktopSideSpacing: '100px',
         mobileSideSpacing: '15px',
+        laptopSideSpacing: '50px',
+        desktopSideSpacing: '100px'
     },
     devices: {
         small: '480px',
+        tablet: '768px',
+        laptop: '1024px',
+        large: '1200px',
+        xlarge: '1400px',
     }
 }
 
