@@ -15,7 +15,14 @@ export const HomeWrapper = styled.div`
 
 export const BannerWrapper = styled.div`
     padding: 0 ${globalStyles.spacing.desktopSideSpacing};
-    height: 90vh;
+    height: 580px;
+
+    @media screen and (max-width: ${globalStyles.devices.laptop}) {
+        padding-left: ${globalStyles.spacing.laptopSideSpacing};
+        padding-right: ${globalStyles.spacing.laptopSideSpacing};
+        margin-top: 5rem;
+        text-align: center;
+    }
 
     @media screen and (max-width: ${globalStyles.devices.small}) {
         padding-left: ${globalStyles.spacing.mobileSideSpacing};
@@ -35,21 +42,35 @@ export const RightGraphic = styled.div`
     background: ${globalStyles.colors.peach};
     transform: rotate(45deg) skew(10deg, 10deg);
     z-index: -999999;
+
+    @media screen and (min-width: ${globalStyles.devices.xlarge}) {
+        height: 80vw;
+        width: 80vw;
+    }
 `
 export const BannerMain = styled.div`
     display: flex;
     height: 100%;
     width: 100%;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
-    @media screen and (max-width: ${globalStyles.devices.small}) {
+    @media screen and (max-width: ${globalStyles.devices.laptop}) {
         flex-direction: column-reverse;
     }
 `
 export const BannerContent = styled.div`
     animation: ${moveUp} 1s ease-in-out, ${fadeIn} 1s ease-in-out;
 
+    @media screen and (min-width: ${globalStyles.devices.xlarge}) {
+        max-width: 40vw;
+    }
+    @media screen and (max-width: ${globalStyles.devices.laptop}) {
+        width: 100vw;
+        background: white;
+        padding: ${globalStyles.spacing.laptopSideSpacing};
+        z-index: -999;
+    }
     @media screen and (max-width: ${globalStyles.devices.small}) {
         width: 100vw;
         background: white;
@@ -63,7 +84,7 @@ export const HeroImgWrapper = styled.div`
     display: grid;
     align-items: end;
 
-    @media screen and (max-width: ${globalStyles.devices.small}) {
+    @media screen and (max-width: ${globalStyles.devices.laptop}) {
         margin-top: 4rem;
     }
 `
@@ -74,7 +95,7 @@ export const HeroImg = styled.img`
     animation: ${moveUp} 1s ease-in-out, ${fadeIn} 1s ease-in-out;
     z-index: -9999;
 
-    @media screen and (max-width: ${globalStyles.devices.small}) {
+    @media screen and (max-width: ${globalStyles.devices.laptop}) {
         height: 250px;
     }
 `
@@ -95,6 +116,11 @@ export const ProTeacherSubCard = styled.div`
     top: -40%;
     left: 40%;
     animation: ${fadeIn} 1s ease-in-out;
+
+    @media screen and (max-width: ${globalStyles.devices.laptop}) {
+        top: -93%;
+        left: 4%;
+    }
 
     @media screen and (max-width: ${globalStyles.devices.small}) {
         margin-right: 0.4rem;
@@ -127,6 +153,14 @@ export const KeyFeaturesWrapper = styled.div`
     width: 100vw;
     padding: 100px ${globalStyles.spacing.desktopSideSpacing};
 
+    @media screen and (max-width: ${globalStyles.devices.laptop}) {
+        flex-direction: column;
+        padding-left: ${globalStyles.spacing.laptopSideSpacing};
+        padding-right: ${globalStyles.spacing.laptopSideSpacing};
+        justify-content: center;
+        text-align: center;
+    }
+
     @media screen and (max-width: ${globalStyles.devices.small}) {
         flex-direction: column;
         padding-left: ${globalStyles.spacing.mobileSideSpacing};
@@ -136,9 +170,12 @@ export const KeyFeaturesWrapper = styled.div`
     }
 `
 export const KeyFeaturesContent = styled.div`
-    width: 50%;
     align-self: center;
 
+
+    @media screen and (min-width: ${globalStyles.devices.xlarge}) {
+        max-width: 40vw;
+    }
     @media screen and (max-width: ${globalStyles.devices.small}) {
         width: 100%;
     }
@@ -149,9 +186,9 @@ export const PeachText = styled.span`
 `
 
 export const KeyFeatureCards = styled.div`
-    width: 50%;
     display: flex;
     flex-wrap: wrap;
+    flex: 0 0 510px;
 
     div {
         margin-bottom: 1rem;
@@ -180,8 +217,16 @@ export const KeyFeatureCards = styled.div`
         animation: ${fadeIn} 1s 1.75s ease-in-out;
     }
 
+    
+    @media screen and (min-width: ${globalStyles.devices.small}) and (max-width: ${globalStyles.devices.laptop}) {
+        width: 500px;
+        justify-content: center;
+        margin: auto;
+        margin-top: 4rem;
+    }
+
     @media screen and (max-width: ${globalStyles.devices.small}) {
-        width: 100%;
+        flex-basis: 100%;
         justify-content: center;
 
         div {
