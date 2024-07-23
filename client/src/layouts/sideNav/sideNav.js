@@ -25,17 +25,22 @@ const SideNav = (props) => {
         }
     }, [showSideNav, setShowSideNav])
 
+    const handleCategoryClick = (path) => {
+        navigate(path)
+        setShowSideNav(false)
+    }
+
     return (
         <SideNavWrapper show={showSideNav} ref={sideNavRef}>
             <Header>
-                <BrandLogo src={Logo}></BrandLogo>
+                <BrandLogo src={Logo} onClick={() => navigate('/')}></BrandLogo>
                 <Close onClick={() => setShowSideNav(false)}>&times;</Close>
             </Header>
             <Categories>
                 {
                     categories.map((item, index) => (
-                        <Category key={index} onClick={() => navigate('/comingsoon')}>
-                            <Heading level='5'>{item}</Heading>
+                        <Category key={index} onClick={() => handleCategoryClick(item.path)}>
+                            <Heading level='5'>{item.category}</Heading>
                         </Category>
                     ))
                 }

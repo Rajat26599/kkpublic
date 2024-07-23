@@ -69,13 +69,11 @@ export const BannerContent = styled.div`
         width: 100vw;
         background: white;
         padding: ${globalStyles.spacing.laptopSideSpacing};
-        z-index: -999;
     }
     @media screen and (max-width: ${globalStyles.devices.small}) {
         width: 100vw;
         background: white;
         padding: 1rem;
-        z-index: -999;
     }
 `
 
@@ -141,7 +139,6 @@ export const GamesSubCard = styled.div`
 
 export const MainAreaWrapper = styled.div`
     position: relative;
-    z-index: -999;
 `
 
 // KEY FEATURES
@@ -248,10 +245,8 @@ export const KeyFeatureCards = styled.div`
 
 export const CirclesWrapper = styled.div`
     position: absolute;
-    height: 100%;
     width: 100vw;
-    background: transparent;
-    z-index: -99;
+    z-index: 9;
 
     @media screen and (max-width: ${globalStyles.devices.small}) {
         div:nth-of-type(1) {

@@ -9,8 +9,10 @@ import Certificate from '../../assets/vectors/certificate.png'
 import Lock from '../../assets/vectors/lock.png'
 
 import { KeyFeaturesWrapper, KeyFeaturesContent, PeachText, KeyFeatureCards } from "./styles"
+import { useNavigate } from "react-router-dom"
 
 const KeyFeatures = () => {
+    const navigate = useNavigate();
     const data = [
         {
             title: 'Home-like Environment',
@@ -40,7 +42,7 @@ const KeyFeatures = () => {
                     <strong>We are <PeachText>K. K. Public</PeachText> and <PeachText>Childhood</PeachText> is our passion</strong>
                 </Heading>
                 <P color={globalStyles.colors.white}>We are excited and pleased to introduce to you the wonderful, passionate and commited educators who are working at our campus. Please take a moment to meet out family. We invited each of them to describe why they love working with children.</P>
-                <Button>Learn more</Button>
+                <Button onClick={() => navigate('/comingsoon')}>Learn more</Button>
             </KeyFeaturesContent>
             <KeyFeatureCards>
                 {

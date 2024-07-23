@@ -4,13 +4,32 @@ import { useEffect, useState } from "react";
 import globalStyles from "../../data/constants/globalStyles";
 import Heading from "../../components/heading/Heading";
 import SideNav from "../sideNav/sideNav";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
-    const [scrollYPosition, setScrollYPosition] = useState(0);
-    const [showSideNav, setShowSideNav] = useState(false);
+    const [scrollYPosition, setScrollYPosition] = useState(0)
+    const [showSideNav, setShowSideNav] = useState(false)
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
-    const categories = ['Home', 'About us', 'Programs', 'Admission']
+    const navigate = useNavigate()
+
+    const categories = [
+        {
+            category: 'Home',
+            path: '/'
+        }, 
+        {
+            category: 'About us',
+            path: 'comingsoon'
+        }, 
+        {
+            category: 'Programs',
+            path: 'comingsoon'
+        }, 
+        {
+            category: 'Admission',
+            path: 'comingsoon'
+        }]
 
     const handleScroll = () => {
         const newScrollYPosition = window.pageYOffset;
@@ -33,14 +52,14 @@ const Navbar = () => {
         <>
         <SideNav categories={categories} showSideNav={showSideNav} setShowSideNav={setShowSideNav} />        
         <NavbarWrapper bgcolor={scrollYPosition >= window.innerHeight-100 ? globalStyles.colors.white : 'transparent'}>
-            <BrandLogo src={Logo}></BrandLogo>
+            <BrandLogo src={Logo} onClick={() => navigate('/')}></BrandLogo>
             {
                 screenWidth > parseInt(globalStyles.devices.laptop.substring(0, globalStyles.devices.laptop.length-2)) ?
                     <Categories>
                         {
                             categories.map((item, index) => (
-                                <Category key={index}>
-                                    <Heading level='6'>{item}</Heading>
+                                <Category key={index} onClick={() => navigate(item.path)}>
+                                    <Heading level='6'>{item.category}</Heading>
                                 </Category>
                             ))
                         }
