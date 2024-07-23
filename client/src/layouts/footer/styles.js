@@ -4,7 +4,6 @@ import { MyP } from "../../components/p/styles"
 
 export const FooterWrapper = styled.div`
     position: relative;
-    z-index: -999;
     background-color: ${globalStyles.colors.extraLightPeach};
     width: 100%;
 `

@@ -9,8 +9,11 @@ import Basketball from '../../assets/vectors/basketball.png'
 import SubCard from "../../components/subCard/SubCard"
 import { ProTeacherSubCard } from "./styles"
 import { GamesSubCard } from "./styles"
+import { useNavigate } from "react-router-dom"
 
 const Banner = () => {
+
+    const navigate = useNavigate();
 
     return (
         <BannerWrapper>
@@ -21,7 +24,7 @@ const Banner = () => {
                     <Heading level='1' color={globalStyles.colors.peach}>K. K. Public School</Heading>
                     <Heading level='4' color={globalStyles.colors.navyBlue}>We Create Magic For Kids</Heading>
                     <P color={globalStyles.colors.navyBlue}>Dream is often a child's first introduction to school. The learning library surplus of online resources. Hello new learners transition into the scholaristic world of ABCs and 123s.</P>
-                    <Button>Book a visit</Button>
+                    <Button onClick={() => navigate('comingsoon')}>Book a visit</Button>
                 </BannerContent>
                 <HeroImgWrapper>
                     <HeroImg src={HeroImage}></HeroImg>
