@@ -32,7 +32,6 @@ const Input = (props) => {
 
             <MyInputWrapper>            
                 <MyInput
-                    id='input'
                     name={name} 
                     type={getType()} 
                     value={value} 
