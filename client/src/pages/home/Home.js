@@ -3,8 +3,8 @@ import MainArea from "./MainArea"
 
 import { HomeWrapper } from "./styles"
 import Circles from "../../layouts/circles/Circles"
-import Footer from "../../layouts/footer/Footer"
 import globalStyles from "../../data/constants/globalStyles"
+import { useEffect } from "react"
 
 const Home = () => {
 
@@ -75,12 +75,15 @@ const Home = () => {
         }
     ]
 
+    useEffect(() => {
+        window.scroll(0,0)
+    }, [])
+
     return (
         <HomeWrapper>
             <Circles data={dataForCircles} />
             <Banner />
             <MainArea />
-            <Footer />
         </HomeWrapper>
     )
 }

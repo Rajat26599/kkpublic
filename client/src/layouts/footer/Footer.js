@@ -4,6 +4,7 @@ import Heading from "../../components/heading/Heading"
 import P from "../../components/p/P"
 import globalStyles from "../../data/constants/globalStyles"
 import QuickLinks from "../quickLinks/QuickLinks"
+import SocialMedia from "../../components/socialMedia/SocialMedia"
 
 const Footer = (props) => {
     return (
@@ -16,8 +17,10 @@ const Footer = (props) => {
                     <P color={globalStyles.colors.navyBlue}>
                         In-front of Punjab National Bank, <br />
                         Bara Bazar, Shikohabad - 283135, <br />
-                        Uttar Pradesh. India
+                        Uttar Pradesh, India
                     </P>
+                    <br />
+                    <SocialMedia />
                 </FooterContent>
 
                 {props.children}

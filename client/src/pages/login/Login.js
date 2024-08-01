@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Form from "../../components/form/Form"
 import Input from "../../components/input/Input"
 import { Row, LoginWrapper, RadioWrapper } from "./styles"
@@ -112,6 +112,10 @@ const Login = () => {
             navigate('/comingsoon')
         }
     }
+
+    useEffect(() => {
+        window.scroll(0,0)
+    }, [])
 
     return (
         <LoginWrapper>
