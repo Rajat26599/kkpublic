@@ -24,4 +24,8 @@ export const RadioWrapper = styled.div`
     display: flex;
     align-items: center;
     grid-column-gap: 10px;
+
+    :hover {
+        cursor: pointer;
+    }
 `
