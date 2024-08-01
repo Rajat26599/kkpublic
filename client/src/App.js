@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PageNotFound from './pages/pageNotFound/PageNotFound';
 import Navbar from './layouts/navbar/Navbar';
 import Login from './pages/login/Login';
+import Footer from "./layouts/footer/Footer"
 // import Login from './login/Login';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/*' element={<PageNotFound />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
