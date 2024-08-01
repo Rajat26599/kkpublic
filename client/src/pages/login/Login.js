@@ -118,12 +118,12 @@ const Login = () => {
             <Circles data={dataForCircles} />
             <Form heading='Login' width='50%'>
                 <Row>
-                    <RadioWrapper>
-                        <Input type='radio' name='radio' value={'mobile'} checked={radioVal === 'mobile'} onChange={() => setRadioVal('mobile')} />
+                    <RadioWrapper onClick={() => setRadioVal('mobile')}>
+                        <Input type='radio' name='radio' value={'mobile'} checked={radioVal === 'mobile'} />
                         <P>Moblie</P>
                     </RadioWrapper>
-                    <RadioWrapper>
-                        <Input type='radio' name='radio' value={'email'} checked={radioVal === 'email'} onChange={() => setRadioVal('email')} />
+                    <RadioWrapper onClick={() => setRadioVal('email')}>
+                        <Input type='radio' name='radio' value={'email'} checked={radioVal === 'email'} />
                         <P>Email</P>
                     </RadioWrapper>
                 </Row>
