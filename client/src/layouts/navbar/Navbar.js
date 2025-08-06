@@ -28,7 +28,7 @@ const Navbar = () => {
         }, 
         {
             category: 'Admission',
-            path: 'comingsoon'
+            path: 'admission'
         }]
 
     const handleScroll = () => {

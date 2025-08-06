@@ -6,6 +6,7 @@ import PageNotFound from './pages/pageNotFound/PageNotFound';
 import Navbar from './layouts/navbar/Navbar';
 import Login from './pages/login/Login';
 import Footer from "./layouts/footer/Footer"
+import { Admission } from './pages/admission/Admission';
 // import Login from './login/Login';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/comingsoon' element={<ComingSoon />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/admission' element={<Admission />} />
           <Route path='/*' element={<PageNotFound />} />
         </Routes>
         <Footer />
