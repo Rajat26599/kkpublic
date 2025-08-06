@@ -21,6 +21,9 @@ const globalStyles = {
         laptop: '1024px',
         large: '1200px',
         xlarge: '1400px',
+    },
+    other: {
+        navbarHeight: '80px'
     }
 }
 
