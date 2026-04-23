@@ -5,13 +5,18 @@ import globalStyles from "../../data/constants/globalStyles";
 import Heading from "../../components/heading/Heading";
 import SideNav from "../sideNav/sideNav";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../redux-toolkit/authSlice";
 
 const Navbar = () => {
     const [scrollYPosition, setScrollYPosition] = useState(0)
     const [showSideNav, setShowSideNav] = useState(false)
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
+    const user = useSelector(state => state.authReducer)
+
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const categories = [
         {
@@ -56,12 +61,21 @@ const Navbar = () => {
             {
                 screenWidth > parseInt(globalStyles.devices.laptop.substring(0, globalStyles.devices.laptop.length-2)) ?
                     <Categories>
+                        <div>
+                            {
+                                categories.map((item, index) => (
+                                    <Category key={index} onClick={() => navigate(item.path)}>
+                                        <Heading level='6'>{item.category}</Heading>
+                                    </Category>
+                                ))
+                            }
+                        </div>
                         {
-                            categories.map((item, index) => (
-                                <Category key={index} onClick={() => navigate(item.path)}>
-                                    <Heading level='6'>{item.category}</Heading>
+                            user.loggedin && <div>
+                                <Category onClick={() => dispatch(logout())}>
+                                    <Heading level='6'>Logout</Heading>
                                 </Category>
-                            ))
+                            </div>
                         }
                     </Categories>
                 :

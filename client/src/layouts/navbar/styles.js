@@ -32,6 +32,9 @@ export const BrandLogo = styled.img`
 export const Categories = styled.ul`
     list-style-type: none;
     margin: unset;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 `
 
 export const Category = styled.li`
