@@ -7,14 +7,22 @@ import Navbar from './layouts/navbar/Navbar';
 import Login from './pages/login/Login';
 import Footer from "./layouts/footer/Footer"
 import { Admission } from './pages/admission/Admission';
+import Dashboard from './pages/Dashboard';
 // import Login from './login/Login';
 
+// REDUX TOOLKIT
+import { useSelector } from 'react-redux'
+
 function App() {
+  const user = useSelector((state) => state.authReducer)
   return (
     <BrowserRouter>    
       <div className="App">
         <Navbar />
         <Routes>
+          {
+            user.roles.includes('admin') && <Route path='/dashboard' element={<Dashboard />} />
+          }
           <Route path='/' element={<Home />} />
           <Route path='/comingsoon' element={<ComingSoon />} />
           <Route path='/login' element={<Login />} />

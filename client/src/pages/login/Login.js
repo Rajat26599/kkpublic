@@ -8,6 +8,10 @@ import Circles from "../../layouts/circles/Circles"
 import { useNavigate } from "react-router-dom"
 import P from "../../components/p/P"
 
+// REDUX TOOLKIT
+import { useDispatch } from 'react-redux'
+import { login } from "../../redux-toolkit/authSlice"
+
 const Login = () => {
     const [ radioVal, setRadioVal ] = useState('mobile')
 
@@ -20,6 +24,7 @@ const Login = () => {
     const [ passwordError, setPasswordError ] = useState('')
 
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     
     const peach = globalStyles.colors.peach
     const navyBlue = globalStyles.colors.navyBlue
@@ -92,24 +97,53 @@ const Login = () => {
         }
     }
 
-    const handleSubmit = () => {
-        
+    const isInputValid = () => {
         if(radioVal === 'mobile') {
             if(mobile === '') {
                 setMobileError('Mobile number is requried')
+                return false
             } else if (mobile.length < 10) {
                 setMobileError('Mobile number is invalid')
+                return false
             }
         } else if(radioVal === 'email') {
             if(email === '') {
                 setEmailError('Email address is requried')
+                return false
             } else if(!isEmailValid()) {
                 setEmailError('Email is invallid')
+                return false
             }
         } else if(password === '') {
             setPasswordError('Password is requried')
-        } else {
-            navigate('/comingsoon')
+            return false
+        }
+        return true
+    }
+
+    const handleSubmit = () => {
+        if(isInputValid()) {
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(radioVal === 'email' ? {
+                    mode: radioVal,
+                    email: email,
+                    password: password
+                } : {
+                    mode: radioVal,
+                    mobile: mobile,
+                    password: password
+                })
+            }
+            fetch(process.env.REACT_APP_SERVER_URL + '/login', requestOptions)
+                .then(r => r.json())
+                .then(res => {
+                    if(res.success) {
+                        dispatch(login({data: {...res.data, loggedin: true}}))
+                        navigate('/dashboard')
+                    }
+                })
         }
     }
 
