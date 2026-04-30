@@ -4,11 +4,17 @@ import Logo from '../../assets/img/logo.jpg'
 import { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+// Redux
+import { useDispatch, useSelector } from 'react-redux'
+import { logout } from '../../redux-toolkit/authSlice'
+
 const SideNav = (props) => {
     const { categories, showSideNav, setShowSideNav } = props
-    const sideNavRef = useRef(null)
+    const user = useSelector(state => state.authReducer)
 
+    const sideNavRef = useRef(null)
     const navigate = useNavigate();
+    const dispatch = useDispatch()
 
     // Close sideNav on outside click
     useEffect(() => {
@@ -43,6 +49,10 @@ const SideNav = (props) => {
                             <Heading level='5'>{item.category}</Heading>
                         </Category>
                     ))
+                }
+                { user.loggedin && <Category onClick={() => dispatch(logout())}>
+                        <Heading level='5'>Logout</Heading>
+                    </Category>
                 }
             </Categories>
         </SideNavWrapper>
