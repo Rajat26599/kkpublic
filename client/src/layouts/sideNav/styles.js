@@ -40,9 +40,15 @@ export const Categories = styled.ul`
     margin-top: 2rem;
     list-style: none;
     padding-left: 0;
+    cursor: pointer;
 `
 
 export const Category = styled.li`
     padding: ${globalStyles.spacing.mobileSideSpacing};
     color: ${globalStyles.colors.navyBlue};
+
+    &:hover {
+        background-color: ${globalStyles.colors.peach};
+        color: ${globalStyles.colors.white};
+    }
 `
